@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> do while loop</title>
+</head>
+<body style="background-color: black; color: white; text-align: center;">
+    <h1> do while loop</h1>
+    <script>
+        // true condition
+        let i =1
+        do{
+            console.log(i)
+            i++
+        }while(i<=10)
+
+        // false condition 
+        let j=50
+        do{
+            console.log(j)
+            j++
+        }while(j<50);
+     
+// do while prblm 
+        let sum = 0;
+        let number;
+
+do {
+  number = parseInt(prompt("Enter a number (enter a negative number to exit):"));
+
+  // Check if number is positive
+  if (number > 0) {
+    sum += number; // Add to sum
+  }
+} while (number >= 0);
+
+console.log("Sum of positive numbers entered:", sum);
+
+    </script>
+
+</body> 
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Js</title>
+</head>
+<style>
+  .container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+  }
+  .cart{
+    height: 500px;
+    width: 400px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .cart div{
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+  }
+  .cart h1{
+    font-size: 25px;
+
+  }
+  .cart h2,h3{
+    font-size: 20px;
+  }
+</style>
+<body>
+  <h1 style="text-align: center;">java script</h1>
+  <div class="container">
+
+  </div>
+
+  <script>
+     const container = document.querySelector(".container")
+    fetch('https://fakestoreapi.com/products')
+    .then(response=>response.json())
+    .then(data=>{
+      console.log(data)
+      data.forEach(d=>{
+        container.innerHTML +=
+        
+        `
+        <div class="cart">
+        
+          <img src=${d.image} alt="err"  style="height:100px;width:100px;"/>
+        
+          
+          <h1>${d.title}</h1>
+          <p>${d.description}</p>
+            <h3>${d.category}</h3>
+          <h2>price:$${d.price}</h2>
+     
+          </div>
+        `
+        
+      })
+    })
+   
+    .catch(error=>console.log(error))
+
+  </script>
+  
+  
+</body>
+</html>
